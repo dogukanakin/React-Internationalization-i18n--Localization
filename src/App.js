@@ -1,13 +1,11 @@
 import './App.css'
 import { BrowserRouter, Route, Routes, Link, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
-import Contact from './pages/Contact'
 import Navbar from './components/Navbar'
 import { I18nextProvider, useTranslation } from 'react-i18next'
 import i18n from './i18n'
 import { useEffect } from 'react'
 import NotFound from './pages/NotFound'
-import RedirectToLanguage from './pages/RedirectToLanguage'
 const App = () => {
   useEffect(() => {
     fixLanguageCodeInURL()
@@ -25,7 +23,8 @@ const App = () => {
 
   const defaultLanguage = 'en-en'
 
-  // Dil kodunu URL'den almak için bir işlev
+  // language code is the first part of the pathname
+  // e.g. /en-en/contact
   const getLanguageFromURL = () => {
     const path = window.location.pathname
     const languageCode = path.split('/')[1]
@@ -39,9 +38,7 @@ const App = () => {
     element: (
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} />
-        <Route path='/redirect' element={<RedirectToLanguage />} />
       </Routes>
     )
   }
@@ -58,10 +55,6 @@ const App = () => {
           <Route
             path='/'
             element={<Navigate to={localizedLink('/')} replace />}
-          />
-          <Route
-            path='/contact'
-            element={<Navigate to={localizedLink('/contact')} replace />}
           />
           <Route
             path='*'

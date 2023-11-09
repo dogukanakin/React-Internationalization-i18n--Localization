@@ -10,6 +10,8 @@ const Home = () => {
     <div className='container'>
       <header>
         <h1>{t('home')}</h1>
+        <h2>{t('welcome')}</h2>
+        <p>{t('this is a description')}</p>
       </header>
       <div className='alert alert-success' role='alert'>
         <PostList />

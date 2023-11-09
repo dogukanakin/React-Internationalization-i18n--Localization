@@ -49,11 +49,6 @@ const Navbar = ({ history }) => {
                 {t('home')}
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/contact'>
-                {t('contact')}
-              </Link>
-            </li>
           </ul>
         </div>
         <div>
