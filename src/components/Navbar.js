@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 
 const apiUrls = {
   languageSettings: 'http://127.0.0.1:8000/tr/api/settings'
@@ -53,16 +52,6 @@ const Navbar = ({ history }) => {
             <li className='nav-item'>
               <Link className='nav-link' to='/contact'>
                 {t('contact')}
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/MovieList'>
-                {t('movieList')}
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/ListPage'>
-                {t('ListPage')}
               </Link>
             </li>
           </ul>

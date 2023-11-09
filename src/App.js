@@ -7,8 +7,6 @@ import { I18nextProvider, useTranslation } from 'react-i18next'
 import i18n from './i18n'
 import { useEffect } from 'react'
 import NotFound from './pages/NotFound'
-import MovieList from './pages/MovieList'
-import ListPageForLanguageCode from './pages/ListPageForLanguageCode'
 import RedirectToLanguage from './pages/RedirectToLanguage'
 const App = () => {
   useEffect(() => {
@@ -42,8 +40,6 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/MovieList' element={<MovieList />} />
-        <Route path='/ListPage' element={<ListPageForLanguageCode />} />
         <Route path='*' element={<NotFound />} />
         <Route path='/redirect' element={<RedirectToLanguage />} />
       </Routes>
@@ -66,14 +62,6 @@ const App = () => {
           <Route
             path='/contact'
             element={<Navigate to={localizedLink('/contact')} replace />}
-          />
-          <Route
-            path='/MovieList'
-            element={<Navigate to={localizedLink('/MovieList')} replace />}
-          />
-          <Route
-            path='/ListPage'
-            element={<Navigate to={localizedLink('/ListPage')} replace />}
           />
           <Route
             path='*'
